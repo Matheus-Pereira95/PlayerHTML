@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-cast-api-enabled="true">
+  <head>
+    <title>Player Teste de video </title>
+
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+    <link href="video-js.css" rel="stylesheet" type="text/css">
+    <link href="../dist/videojs.chromecast.css" rel="stylesheet" type="text/css">
+
+    <script src="http://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+    <script src="video.dev.js"></script>
+    <script src="../dist/videojs.chromecast.js"></script>
+
+  </head>
+
+  <body>
+
+    <video 
+        id="demo_player" 
+        class="video-js vjs-default-skin" 
+        controls 
+        preload="auto" 
+        width="640" 
+        height="360"
+        poster="https://gentvplay.com.br/assets/logotop-4da130af3f80b87f51c0d491a90732a41b7ae00e33490fba7191842edf3ff868.png"
+        data-setup="{}">
+      <source src="https://player.radio.br/playervideo/clientes/gentv/" >
+      
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      videojs("demo_player", {
+        plugins: {
+          chromecast: {
+            appId: undefined,
+            metadata: {
+              title: "Title",
+              subtitle: "Subtitle"
+            }
+          }
+        }
+      });
+    });
+    </script>
+
+    <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+  </body>
+</html>
